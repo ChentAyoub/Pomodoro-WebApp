@@ -1,6 +1,6 @@
 # 🍅 Maticha
 
-> **Current Sprint: 7-Day Holiday Challenge*
+> **Current Sprint: 7-Day Holiday Challenge**
 
 | Phase | Milestone | Status |
 | :--- | :--- | :--- |
