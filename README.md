@@ -8,7 +8,7 @@
 | :--- | :--- | :--- |
 | **01** | **Initialization** | ![Progress](https://geps.dev/progress/100?scale=100&title=Setup&color=4caf50) |
 | **02** | **Structure** | ![Progress](https://geps.dev/progress/100?scale=100&title=Architecture&color=4caf50) |
-| **03** | **Logic** | ![Progress](https://geps.dev/progress/10?scale=100&title=Core_Engine&color=eb4034) |
+| **03** | **Logic** | ![Progress](https://geps.dev/progress/85?scale=100&title=Models_Ready&color=eb4034) |
 | **04** | **Systems** | ![Pending](https://geps.dev/progress/0?scale=100&title=Database&color=808080) |
 | **05** | **Polish** | ![Pending](https://geps.dev/progress/0?scale=100&title=UI_UX&color=808080) |
 | **06** | **Experience** | ![Pending](https://geps.dev/progress/0?scale=100&title=Fun_Features&color=808080) |
