@@ -1,12 +1,14 @@
 # 🍅 Maticha
 
+<img width="518" height="518" alt="maticha-logo" src="https://github.com/user-attachments/assets/3e4b09b7-17e9-4111-99f4-42a8a70a967e" />
+
 > **Current Sprint: 7-Day Holiday Challenge**
 
 | Phase | Milestone | Status |
 | :--- | :--- | :--- |
-| **01** | **Initialization** | ![Progress](https://geps.dev/progress/20?scale=100&title=Setup&color=eb4034) |
-| **02** | **Structure** | ![Pending](https://geps.dev/progress/0?scale=100&title=Architecture&color=808080) |
-| **03** | **Logic** | ![Pending](https://geps.dev/progress/0?scale=100&title=Core_Engine&color=808080) |
+| **01** | **Initialization** | ![Progress](https://geps.dev/progress/100?scale=100&title=Setup&color=4caf50) |
+| **02** | **Structure** | ![Progress](https://geps.dev/progress/100?scale=100&title=Architecture&color=4caf50) |
+| **03** | **Logic** | ![Progress](https://geps.dev/progress/10?scale=100&title=Core_Engine&color=eb4034) |
 | **04** | **Systems** | ![Pending](https://geps.dev/progress/0?scale=100&title=Database&color=808080) |
 | **05** | **Polish** | ![Pending](https://geps.dev/progress/0?scale=100&title=UI_UX&color=808080) |
 | **06** | **Experience** | ![Pending](https://geps.dev/progress/0?scale=100&title=Fun_Features&color=808080) |
@@ -14,4 +16,4 @@
 
 ---
 **"Yallah, bda lkhedma!" 🍅**
-*Last update: 2026-02-02*
+*Last update: 2026-02-03*
