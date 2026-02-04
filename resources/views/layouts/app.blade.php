@@ -15,7 +15,7 @@
 
     <nav class="fixed top-0 left-0 right-0 h-24 px-8 flex justify-between items-center z-50 bg-gradient-to-b from-black/40 to-transparent">
         <div class="flex items-center">
-            <img src="/images/maticha-logo.png" alt="Maticha Logo" class="h-16 w-auto drop-shadow-2xl">
+            <img src="/images/maticha-logo.png" alt="Maticha Logo" class="mt-2 h-36 w-auto drop-shadow-2xl">
         </div>
         <div class="flex items-center space-x-6">
             <a href="/login" class="text-white/80 hover:text-white font-bold uppercase text-xs tracking-widest transition">Login</a>
@@ -34,7 +34,7 @@
                 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0RO75eA9m1xzrRXcSR8TAx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </aside>
-
+                    
         <main class="flex-1 flex flex-col items-center px-6">
             @yield('content')
             
