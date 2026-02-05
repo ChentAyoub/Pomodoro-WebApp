@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'major',
+        'avatar',
+        'points',
     ];
 
     /**
@@ -44,5 +47,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function promodoros()
+    {
+        return $this->hasMany(Promodoro::class);
+    }
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
     }
 }
