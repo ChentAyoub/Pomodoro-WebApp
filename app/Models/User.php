@@ -57,4 +57,21 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+
+    public function getHoursFocusedAttribute()
+    {
+        $totalminutes = $this->promodoroSessions->sum('duration');
+        return round($totalminutes / 60, 1);
+    }
+
+    public function getFriendshipCountAttribute()
+    {
+        return \DB::table('friendships')
+            ->where('status', 'accepted')
+            ->orWhere(function ($query) {
+                $query->where('user_id', $this->id)
+                    ->orWhere('friend_id', $this->id);
+            })
+            ->count();
+    }
 }

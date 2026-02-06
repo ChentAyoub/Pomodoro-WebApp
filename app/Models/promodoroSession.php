@@ -18,4 +18,9 @@ class promodoroSession extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function promodoro()
+    {
+        return $this->belongsTo(Promodoro::class);
+    }
 }

@@ -17,9 +17,39 @@
         <div class="flex items-center">
             <img src="/images/maticha-logo.png" alt="Maticha Logo" class="mt-2 h-36 w-auto drop-shadow-2xl">
         </div>
+
         <div class="flex items-center space-x-6">
-            <a href="/login" class="text-white/80 hover:text-white font-bold uppercase text-xs tracking-widest transition">Login</a>
-            <a href="/register" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-xl transition shadow-lg shadow-red-900/40">Join</a>
+            @auth
+                @if(auth()->user()->friendRequests->count() > 0)
+                    <div class="relative group cursor-pointer">
+                        <i class="fas fa-bell text-white/60 hover:text-white transition"></i>
+                        <span class="absolute -top-2 -right-2 bg-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded-full animate-bounce">
+                            {{ auth()->user()->friendRequests->count() }}
+                        </span>
+                    </div>
+                @endif
+
+                <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-md p-1.5 pr-4 rounded-full border border-white/10">
+                    <a href="/profile" class="flex items-center space-x-3 group">
+                        <img src="{{ auth()->user()->avatar ?? asset('images/default-avatar.png') }}" 
+                             alt="Profile" 
+                             class="w-8 h-8 rounded-full border border-white/20 group-hover:border-red-500 transition object-cover">
+                        <span class="text-xs font-bold uppercase tracking-wider hidden md:block">{{ auth()->user()->name }}</span>
+                    </a>
+
+                    <div class="h-4 w-[1px] bg-white/10"></div>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 hover:text-red-500 transition">
+                            Log Out
+                        </button>
+                    </form>
+                </div>
+            @else
+                <a href="/login" class="text-white/80 hover:text-white font-bold uppercase text-xs tracking-widest transition">Login</a>
+                <a href="/register" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-xl transition shadow-lg shadow-red-900/40">Join</a>
+            @endauth
         </div>
     </nav>
 
@@ -51,25 +81,34 @@
                 </div>
             </div>
         </main>
+        @auth
 
         <aside class="hidden lg:block w-72 p-8 bg-black/20 backdrop-blur-xl border-l border-white/5 fixed right-0 top-0 h-full">
             <div class="mt-24">
                 <h3 class="text-sm font-bold opacity-40 uppercase tracking-[0.2em] mb-8">Squad Activity</h3>
                 <div class="space-y-8">
+                    @forelse(auth()->user()->friends as $friend)
                     <div class="flex items-center space-x-4">
                         <div class="relative">
-                            <div class="w-10 h-10 bg-gray-700 rounded-full border border-white/10"></div>
+                            <img src="{{ $friend->avatar ?? asset('images/default-avatar.png') }}" 
+                                 class="w-10 h-10 rounded-full border border-white/10 object-cover">
+                            
                             <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-gray-900 animate-pulse"></div>
                         </div>
                         <div>
-                            <p class="text-sm font-bold">Ayoub</p>
-                            <p class="text-xs text-white/40">Focusing: MATICHA WEB APP</p>
+                            <p class="text-sm font-bold">{{ $friend->name }}</p>
+                            <p class="text-xs text-white/40">
+                                {{ $friend->pomodoroSessions()->where('status', 'focus')->latest()->first()?->task?->title ?? 'Taking a break...' }}
+                            </p>
                         </div>
                     </div>
+                    @empty
+                    <p class="text-xs text-white/30 italic">Your squad is empty. Add friends to stay focused together!</p>
+                @endforelse
                 </div>
             </div>
         </aside>
-
+        @endauth
     </div>
 
 </body>

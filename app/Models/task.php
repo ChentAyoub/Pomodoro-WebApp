@@ -17,4 +17,9 @@ class task extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function promodoroSessions()
+    {
+        return $this->hasMany(Promodoro::class);
+    }
 }
