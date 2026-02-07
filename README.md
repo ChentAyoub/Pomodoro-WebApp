@@ -2,7 +2,6 @@
 
 <img width="518" height="518" alt="maticha-logo" src="https://github.com/user-attachments/assets/3e4b09b7-17e9-4111-99f4-42a8a70a967e" />
 
-> **Current Sprint: 7-Day Holiday Challenge**
 
 | Phase | Milestone | Status |
 | :--- | :--- | :--- |
